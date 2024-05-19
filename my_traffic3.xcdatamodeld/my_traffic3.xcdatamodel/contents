@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23E224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BusRoute" representedClassName="BusRoute" syncable="YES" codeGenerationType="class">
+        <attribute name="routeId" optional="YES" attributeType="String"/>
+        <attribute name="routeName" optional="YES" attributeType="String"/>
+        <attribute name="routeTypeCd" optional="YES" attributeType="String"/>
+        <relationship name="busStop" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BusStop" inverseName="routes" inverseEntity="BusStop"/>
+    </entity>
+    <entity name="BusStop" representedClassName="BusStop" syncable="YES" codeGenerationType="class">
+        <attribute name="mobileNo" optional="YES" attributeType="String"/>
+        <attribute name="stationId" optional="YES" attributeType="String"/>
+        <attribute name="stationName" optional="YES" attributeType="String"/>
+        <relationship name="routes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BusRoute" inverseName="busStop" inverseEntity="BusRoute"/>
+    </entity>
+</model>
