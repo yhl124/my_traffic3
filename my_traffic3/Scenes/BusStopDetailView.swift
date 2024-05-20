@@ -13,10 +13,11 @@ struct AlertMessage: Identifiable {
     var message: String
 }
 
+
 struct BusStopDetailView: View {
     var busStop: BusStop
     @State private var busRoutes: [BusRoute] = []
-    @Binding var showingDetail: Bool
+    @Environment(\.presentationMode) var presentationMode
     @State private var selectedRoutes: Set<BusRoute> = []
     @State private var alertMessage: AlertMessage?
 
@@ -24,7 +25,7 @@ struct BusStopDetailView: View {
         VStack {
             HStack {
                 Button("취소") {
-                    showingDetail = false
+                    presentationMode.wrappedValue.dismiss()
                 }
                 Spacer()
                 VStack {
@@ -74,6 +75,8 @@ struct BusStopDetailView: View {
         }
     }
 
+
+
     func fetchBusRoutes() {
         guard let stationId = busStop.stationId else { return }
         APIService.shared.fetchBusRoutes(stationId: stationId) { busRoutes in
@@ -89,15 +92,13 @@ struct BusStopDetailView: View {
         do {
             let existingBusStops = try context.fetch(fetchRequest)
             if !existingBusStops.isEmpty {
-                // 이미 존재하는 정류장
                 alertMessage = AlertMessage(message: "이미 있는 정류장")
             } else {
-                // 정류장이 없을 경우 저장
                 let newBusStop = BusStop(context: context)
                 newBusStop.mobileNo = busStop.mobileNo
                 newBusStop.stationId = busStop.stationId
                 newBusStop.stationName = busStop.stationName
-                
+
                 for route in selectedRoutes {
                     let newRoute = BusRoute(context: context)
                     newRoute.routeId = route.routeId
@@ -108,13 +109,13 @@ struct BusStopDetailView: View {
 
                 try context.save()
                 alertMessage = AlertMessage(message: "\(busStop.stationName ?? "") 저장됨")
-                showingDetail = false // 저장 후 시트 닫기
+                //showingDetail = false
             }
         } catch {
             print("Failed to save bus stop: \(error)")
+            alertMessage = AlertMessage(message: "저장 실패")
         }
 
-        // 메시지를 잠시 동안만 표시
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             alertMessage = nil
         }

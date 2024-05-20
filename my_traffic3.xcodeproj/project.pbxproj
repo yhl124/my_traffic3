@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8B01A692BFB890E0029DBDF /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8B01A682BFB890E0029DBDF /* Config.plist */; };
 		F8BCEBBB2BF9D1E100C9B95B /* my_traffic3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BCEBBA2BF9D1E100C9B95B /* my_traffic3App.swift */; };
 		F8BCEBBF2BF9D1E300C9B95B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8BCEBBE2BF9D1E300C9B95B /* Assets.xcassets */; };
 		F8BCEBC22BF9D1E300C9B95B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8BCEBC12BF9D1E300C9B95B /* Preview Assets.xcassets */; };
@@ -15,14 +16,13 @@
 		F8BCEBCF2BF9D7D600C9B95B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BCEBCE2BF9D7D600C9B95B /* MainView.swift */; };
 		F8BCEBDC2BF9E47400C9B95B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BCEBDB2BF9E47400C9B95B /* SearchView.swift */; };
 		F8BCEBDF2BF9E48700C9B95B /* BusStopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BCEBDE2BF9E48700C9B95B /* BusStopDetailView.swift */; };
-		F8BCEBE12BF9E49B00C9B95B /* RouteSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BCEBE02BF9E49B00C9B95B /* RouteSelectionView.swift */; };
 		F8BCEBE32BF9E4C200C9B95B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BCEBE22BF9E4C200C9B95B /* APIService.swift */; };
 		F8BCEBE52BF9E4CF00C9B95B /* XMLParserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BCEBE42BF9E4CF00C9B95B /* XMLParserService.swift */; };
 		F8BCEBEF2BFA06CA00C9B95B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F8BCEBEE2BFA06CA00C9B95B /* .gitignore */; };
-		F8BCEBF12BFA071F00C9B95B /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8BCEBF02BFA071F00C9B95B /* Config.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8B01A682BFB890E0029DBDF /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		F8BCEBB72BF9D1E100C9B95B /* my_traffic3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = my_traffic3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BCEBBA2BF9D1E100C9B95B /* my_traffic3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_traffic3App.swift; sourceTree = "<group>"; };
 		F8BCEBBE2BF9D1E300C9B95B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,11 +32,9 @@
 		F8BCEBCE2BF9D7D600C9B95B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F8BCEBDB2BF9E47400C9B95B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		F8BCEBDE2BF9E48700C9B95B /* BusStopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopDetailView.swift; sourceTree = "<group>"; };
-		F8BCEBE02BF9E49B00C9B95B /* RouteSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectionView.swift; sourceTree = "<group>"; };
 		F8BCEBE22BF9E4C200C9B95B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F8BCEBE42BF9E4CF00C9B95B /* XMLParserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParserService.swift; sourceTree = "<group>"; };
 		F8BCEBEE2BFA06CA00C9B95B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		F8BCEBF02BFA071F00C9B95B /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		F8BCEBF22BFA13E700C9B95B /* my-traffic3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "my-traffic3-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -54,7 +52,7 @@
 		F8BCEBAE2BF9D1E100C9B95B = {
 			isa = PBXGroup;
 			children = (
-				F8BCEBF02BFA071F00C9B95B /* Config.plist */,
+				F8B01A682BFB890E0029DBDF /* Config.plist */,
 				F8BCEBEE2BFA06CA00C9B95B /* .gitignore */,
 				F8BCEBBA2BF9D1E100C9B95B /* my_traffic3App.swift */,
 				F8BCEBC52BF9D1E300C9B95B /* my_traffic3.xcdatamodeld */,
@@ -114,7 +112,6 @@
 				F8BCEBCE2BF9D7D600C9B95B /* MainView.swift */,
 				F8BCEBDB2BF9E47400C9B95B /* SearchView.swift */,
 				F8BCEBDE2BF9E48700C9B95B /* BusStopDetailView.swift */,
-				F8BCEBE02BF9E49B00C9B95B /* RouteSelectionView.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -186,7 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8BCEBF12BFA071F00C9B95B /* Config.plist in Resources */,
+				F8B01A692BFB890E0029DBDF /* Config.plist in Resources */,
 				F8BCEBC22BF9D1E300C9B95B /* Preview Assets.xcassets in Resources */,
 				F8BCEBEF2BFA06CA00C9B95B /* .gitignore in Resources */,
 				F8BCEBBF2BF9D1E300C9B95B /* Assets.xcassets in Resources */,
@@ -206,7 +203,6 @@
 				F8BCEBDC2BF9E47400C9B95B /* SearchView.swift in Sources */,
 				F8BCEBE52BF9E4CF00C9B95B /* XMLParserService.swift in Sources */,
 				F8BCEBC72BF9D1E300C9B95B /* my_traffic3.xcdatamodeld in Sources */,
-				F8BCEBE12BF9E49B00C9B95B /* RouteSelectionView.swift in Sources */,
 				F8BCEBE32BF9E4C200C9B95B /* APIService.swift in Sources */,
 				F8BCEBDF2BF9E48700C9B95B /* BusStopDetailView.swift in Sources */,
 			);

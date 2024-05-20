@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct SearchView: View {
     @State private var searchText = ""
     @State private var busStops: [BusStop] = []
@@ -29,19 +30,16 @@ struct SearchView: View {
                 }
                 .buttonStyle(PlainButtonStyle())
             }
-            .listStyle(PlainListStyle()) // 리스트 주변의 여백 제거
+            .listStyle(PlainListStyle())
         }
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "정류장 검색")
-        .onSubmit(of: .search, fetchBusStops) // 엔터 키를 눌렀을 때 fetchBusStops 호출
+        .onSubmit(of: .search, fetchBusStops)
         .navigationTitle("버스 정류장 검색")
-        .sheet(item: $selectedBusStop) { busStop in
-            BusStopDetailView(busStop: busStop, showingDetail: $showingDetail)
-                .onAppear {
-                    self.showingDetail = true
-                }
-                .onDisappear {
-                    self.selectedBusStop = nil
-                }
+        .sheet(item: $selectedBusStop, onDismiss: {
+            showingDetail = false
+        }) { busStop in
+            //BusStopDetailView(busStop: busStop, showingDetail: $showingDetail)
+            BusStopDetailView(busStop: busStop)
         }
     }
 
