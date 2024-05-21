@@ -17,23 +17,6 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List {
-                    ForEach(busStops) { busStop in
-                        Section(header: Text(busStop.stationName ?? "Unknown Station")) {
-                            ForEach(busStop.routesArray) { busRoute in
-                                VStack(alignment: .leading) {
-                                    Text(busRoute.routeName ?? "Unknown Route")
-                                    Text("Type: \(busRoute.routeTypeCd ?? "Unknown Type")")
-                                        .font(.subheadline)
-                                        .foregroundColor(.gray)
-                                }
-                            }
-                        }
-                    }
-                    .onDelete(perform: deleteBusStop)
-                }
-                .listStyle(InsetGroupedListStyle())
-
                 Spacer()
                 HStack {
                     NavigationLink(destination: SearchView()) {
@@ -60,19 +43,6 @@ struct MainView: View {
                 .padding(.bottom, 20)
             }
             .navigationTitle("위젯 설정")
-        }
-    }
-
-    private func deleteBusStop(at offsets: IndexSet) {
-        withAnimation {
-            let context = PersistenceController.shared.container.viewContext
-            offsets.map { busStops[$0] }.forEach(context.delete)
-
-            do {
-                try context.save()
-            } catch {
-                print("Failed to delete bus stop: \(error)")
-            }
         }
     }
 }

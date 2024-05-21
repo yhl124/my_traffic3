@@ -45,6 +45,11 @@ struct SearchView: View {
 
     func fetchBusStops() {
         let keyword = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+                
+        if let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last {
+            print("Documents directory: \(url)")
+        }
+
         guard !keyword.isEmpty else {
             busStops = []
             return
